@@ -22,11 +22,11 @@ describe FormSlider do
     before(:each) do
       @template = ActionView::Base.new
       @template.output_buffer = ''
-      @builder = FormSlider::SliderFormBuilder::SliderFormForBuilder.new(:item, Object.new, @template, {})
+      @builder = FormSlider::SliderFormBuilder::SliderFormForBuilder.new(:item, Film.new(director: 'Francis Ford Coppola', title: 'The Conversation', rating: 10), @template, {})
     end
 
-    it "tests stuff" do
-      @builder.slider_input(:wolf)
+    it "generates expected html" do
+      @builder.slider_input(:rating) == "<div class=\"slider-container\"><label>rating</label><div class=\"slider\" data-color=\"green\" data-max=\"10\" data-min=\"1\"></div><input id=\"item_rating\" name=\"item[rating]\" type=\"text\" value=\"10\" /></div>"
     end
   end
 end

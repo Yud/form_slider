@@ -9,6 +9,8 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 require "form_slider"
+require "jquery-rails"
+require "jquery-ui-rails"
 
 module Dummy
   class Application < Rails::Application
