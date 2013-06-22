@@ -16,6 +16,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", "~> 4.0.0.rc2"
+  s.add_dependency 'coffee-rails', '~> 4.0.0'
+  s.add_dependency 'jquery-rails'
+  s.add_dependency 'jquery-ui-rails'
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency 'capybara'
   s.add_development_dependency "pry"
