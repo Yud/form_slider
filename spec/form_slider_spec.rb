@@ -81,5 +81,13 @@ describe FormSlider do
       html.at_css('.slider')["data-max"].should == "10"
       html.at_css('.slider')["data-color"].should == "red"
     end
+
+    context "customizing the label" do
+      it "can customize the label's text" do
+        label_name = 'Film Score'
+        @slider_html = @builder.slider_field(:rating, label: { name: label_name, append: ' out of 10' }, min: 1, max: 10, color: 'red')
+        @slider_html.should match("<label>#{label_name}</label>")
+      end
+    end
   end
 end
