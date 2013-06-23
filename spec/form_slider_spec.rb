@@ -14,14 +14,6 @@ describe FormSlider do
       @slider_html = @template.slider_field_tag(:tickets, 4, min: 1, max: 10, color: 'red')
     end
 
-    it "generates expected html" do
-      @slider_html == 
-        "<div class=\"slider-container\">
-        <label>tickets</label>
-        <div class=\"slider\" data-color=\"green\" data-max=\"10\" data-min=\"1\"></div>
-        <input id=\"tickets\" name=\"tickets\" type=\"text\" value=\"4\" /></div>"
-    end
-
     it "generates a container div for the slider field" do
       html = Nokogiri::HTML(@slider_html)
       html.css('.slider-container').children.css('label').should_not be_blank
@@ -53,14 +45,6 @@ describe FormSlider do
       @slider_html = @builder.slider_field(:rating, min: 1, max: 10, color: 'red')
     end
 
-    it "generates expected html" do
-      @builder.slider_field(:rating) == 
-        "<div class=\"slider-container\">
-        <label>rating</label>
-        <div class=\"slider\" data-color=\"red\" data-max=\"10\" data-min=\"1\"></div>
-        <input id=\"film_rating\" name=\"film[rating]\" type=\"text\" value=\"10\" /></div>"
-    end
-
     it "generates a container div for the slider field" do
       html = Nokogiri::HTML(@slider_html)
       html.css('.slider-container').children.css('label').should_not be_blank
@@ -83,10 +67,10 @@ describe FormSlider do
     end
 
     context "customizing the label" do
-      it "can customize the label's text" do
+      it "can customize the label's name" do
         label_name = 'Film Score'
-        @slider_html = @builder.slider_field(:rating, label: { name: label_name, append: ' out of 10' }, min: 1, max: 10, color: 'red')
-        @slider_html.should match("<label>#{label_name}</label>")
+        @slider_html = @builder.slider_field(:rating, label: { name: label_name }, min: 1, max: 10, color: 'red')
+        @slider_html.should match("<label>#{label_name} <span class=\"val\"></span></label>")
       end
     end
   end
