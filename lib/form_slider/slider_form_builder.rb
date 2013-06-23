@@ -3,7 +3,7 @@ module FormSlider
     class SliderFormForBuilder < ActionView::Helpers::FormBuilder
       delegate :content_tag, :tag, :concat, :logger, to: :@template
       
-      def slider_input(name, *args)
+      def slider_field(name, *args)
         args = args.any? ? args.first : {}
         args[:label] ||= name
         args[:min] ||= 1
