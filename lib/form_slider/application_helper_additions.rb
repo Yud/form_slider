@@ -9,7 +9,7 @@ module FormSlider
       form_for(object, options, &block)
     end
 
-    def slider_input_tag(name, value=nil, *args)
+    def slider_field_tag(name, value=nil, *args)
       args = args.any? ? args.first : {}
       args[:label] ||= name
       args[:min] ||= 1
