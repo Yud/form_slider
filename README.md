@@ -28,6 +28,37 @@ And Add the jquery ui css file to application.css:
 ### Form Tag
 
 
+### Field Options
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Usage</th>
+  </tr>
+  <tr>
+    <th>min</th>
+    <td>The minimum value of the slider</td>
+    <td><tt>= f.slider_input :name, min: 1</td></td>
+  </tr>
+  <tr>
+    <th>max</th>
+    <td>The maximum value of the slider</td>
+    <td><tt>= f.slider_input :name, max: 10</td></td>
+  </tr>
+  <tr>
+    <th>color</th>
+    <td>Background color of the slider</td>
+    <td><tt>= f.slider_input :name, color: 'blue'</td></td>
+  </tr>
+  <tr>
+    <th>label</th>
+    <td>Customize the slider's label</td>
+    <td><tt>= f.slider_input :name,  label: 'Customized Field Name'</td></td>
+  </tr>
+</table>
+
+
 ## Contributing
 
 1. Fork it
