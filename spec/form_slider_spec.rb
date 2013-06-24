@@ -21,7 +21,7 @@ describe FormSlider do
     end
 
     it "creates a label" do
-      @slider_html.should match('<label>tickets</label>')
+      @slider_html.should match('<label>tickets <span class=\"val\"></span>')
     end
 
     it "generates a text input with the given value and name" do
@@ -52,7 +52,7 @@ describe FormSlider do
     end
 
     it "creates a label" do
-      @slider_html.should match('<label>rating</label>')
+      @slider_html.should match('<label>rating <span class=\"val\"></span></label>')
     end
 
     it "generates a text input with the given value and name" do
