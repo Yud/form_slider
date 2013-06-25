@@ -18,7 +18,7 @@ window.sliderInput =
         max: currentSlider.data('max'),
         value: inputField.attr('value'),
         create: ->
-          currentSliderContainer.find('label .val').text(inputField.attr('value'))
+          currentSliderContainer.find('label').append(currentSlider.data('append')).find('.val').text(inputField.attr('value'))
           currentSlider.applyGradient(currentSlider.find('.ui-slider-handle').css('left'))
           inputField.hide()
         change: ( event, ui ) ->
