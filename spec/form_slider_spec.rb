@@ -34,6 +34,20 @@ describe FormSlider do
       html.at_css('.slider')["data-max"].should == "10"
       html.at_css('.slider')["data-color"].should == "red"
     end
+
+    context "customizing the label" do
+      it "allows customization of the label's name" do
+        label_name = 'Film Score'
+        @slider_html = @template.slider_field_tag(:rating, 5, label: { name: label_name }, min: 1, max: 10, color: 'red')
+        @slider_html.should match("<label>#{label_name} <span class=\"val\"></span></label>")
+      end
+
+      it "creates a data attribute containing the additional text that will be appended to the label" do
+        @slider_html = @template.slider_field_tag(:rating, 5, label: { append: "additional text" }, min: 1, max: 10, color: 'red')
+        html = Nokogiri::HTML(@slider_html)
+        html.at_css('.slider')["data-append"].should == "additional text"
+      end
+    end
   end
 
   context "slider_form_builder" do
@@ -67,10 +81,16 @@ describe FormSlider do
     end
 
     context "customizing the label" do
-      it "can customize the label's name" do
+      it "allows customization of the label's name" do
         label_name = 'Film Score'
         @slider_html = @builder.slider_field(:rating, label: { name: label_name }, min: 1, max: 10, color: 'red')
         @slider_html.should match("<label>#{label_name} <span class=\"val\"></span></label>")
+      end
+
+      it "creates a data attribute containing the additional text that will be appended to the label" do
+        @slider_html = @builder.slider_field(:rating, label: { append: "additional text" }, min: 1, max: 10, color: 'red')
+        html = Nokogiri::HTML(@slider_html)
+        html.at_css('.slider')["data-append"].should == "additional text"
       end
     end
   end
