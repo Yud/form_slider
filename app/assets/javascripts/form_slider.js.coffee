@@ -16,6 +16,7 @@ window.sliderInput =
       currentSlider.slider
         min: currentSlider.data('min'),
         max: currentSlider.data('max'),
+        step: currentSlider.data('step'),
         value: inputField.attr('value'),
         create: ->
           currentSliderContainer.find('label').append(currentSlider.data('append')).find('.val').text(inputField.attr('value'))

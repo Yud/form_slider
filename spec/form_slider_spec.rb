@@ -11,7 +11,7 @@ describe FormSlider do
     before(:each) do
       @template = ActionView::Base.new
       @template.output_buffer = ''
-      @slider_html = @template.slider_field_tag(:tickets, 4, min: 1, max: 10, color: 'red')
+      @slider_html = @template.slider_field_tag(:tickets, 4, min: 1, max: 10, step: 1, color: 'red')
     end
 
     it "generates a container div for the slider field" do
@@ -32,6 +32,7 @@ describe FormSlider do
       html = Nokogiri::HTML(@slider_html)
       html.at_css('.slider')["data-min"].should == "1"
       html.at_css('.slider')["data-max"].should == "10"
+      html.at_css('.slider')["data-step"].should == "1"
       html.at_css('.slider')["data-color"].should == "red"
     end
 
@@ -77,6 +78,7 @@ describe FormSlider do
       html = Nokogiri::HTML(@slider_html)
       html.at_css('.slider')["data-min"].should == "1"
       html.at_css('.slider')["data-max"].should == "10"
+      html.at_css('.slider')["data-step"].should == "1"
       html.at_css('.slider')["data-color"].should == "red"
     end
 
