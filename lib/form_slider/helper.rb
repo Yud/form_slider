@@ -1,6 +1,7 @@
 module FormSlider
   module Helper
     def slider_label(name, args)
+      return '' if args[:label] == false
       name = args[:label][:name] if args[:label] && args[:label][:name] 
       name = name.to_s.humanize unless name.instance_of?(String)
       output = ""
