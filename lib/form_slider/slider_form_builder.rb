@@ -13,7 +13,7 @@ module FormSlider
         output = ""
         content_tag :div, class: 'slider-container' do
           output << concat( slider_label(name, args) )
-          output << concat( content_tag :div, '', slider_options(args) )
+          output << concat( content_tag :div, '', slider_options(name, args) )
           output << concat( text_field(name, value: value) )
         end
       end

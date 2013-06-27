@@ -8,12 +8,12 @@ end
 
 Then(/^I should see a slider called "(.*?)"$/) do |name|
   @slider_name = name
-  page.should have_css('.slider-container .ui-slider')
-  page.should have_css(".slider-container input[id='#{@slider_name}']", visible: false)
+  page.should have_css(".slider-container .ui-slider.#{name}")
+  page.should have_css(".slider-container input[id$=#{@slider_name}]", visible: false)
 end
 
-Then(/^I set the slider value to "(.*?)"$/) do |value|
-  page.execute_script "s=$('.slider').first();"
+Then(/^I set the slider's value to "(.*?)"$/) do |value|
+  page.execute_script "s=$('.ui-slider.#{@slider_name}');"
   page.execute_script "s.slider('option','slide').call(s,null,{ handle: $('.ui-slider-handle', s), value: #{value} });"
 end
 

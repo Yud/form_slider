@@ -23,7 +23,7 @@
     <%= f.slider_field :rating, label: { name: 'Score:', append: ' out of 10'}, min: 0, max: 10, color: '#3D82DB' %>
   </div>
   <div class="field">
-    <%= slider_field_tag :tickets, 100, label: { name: 'Number of Tickets:', append: ' out of 500'}, min: 0, max: 500, step: 100, color: '#ECECEC' %>
+    <%= slider_field_tag :tickets, 10, label: { name: 'Number of Tickets:', append: ' out of 10'}, min: 0, max: 10, step: 1, color: '#ECECEC' %>
   </div>
   <div class="actions">
     <%= f.submit %>
