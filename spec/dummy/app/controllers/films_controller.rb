@@ -24,7 +24,7 @@ class FilmsController < ApplicationController
     @film = Film.new(film_params)
 
     if @film.save
-      redirect_to @film, notice: 'Film was successfully created.'
+      redirect_to @film, notice: "Film was successfully created. #{params[:tickets]} tickets were ordered."
     else
       render action: 'new'
     end
