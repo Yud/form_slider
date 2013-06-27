@@ -48,6 +48,12 @@ describe FormSlider do
         html = Nokogiri::HTML(@slider_html)
         html.at_css('.slider')["data-append"].should == "additional text"
       end
+
+      it "doesn't create a label if the label option was set to false" do
+        @slider_html = @template.slider_field_tag(:rating, 5, label: false, min: 1, max: 10, color: 'red')
+        html = Nokogiri::HTML(@slider_html)
+        html.at_css('label').should be_blank
+      end
     end
   end
 
@@ -93,6 +99,12 @@ describe FormSlider do
         @slider_html = @builder.slider_field(:rating, label: { append: "additional text" }, min: 1, max: 10, color: 'red')
         html = Nokogiri::HTML(@slider_html)
         html.at_css('.slider')["data-append"].should == "additional text"
+      end
+
+      it "doesn't create a label if the label option was set to false" do
+        @slider_html = @builder.slider_field(:rating, label: false, min: 1, max: 10, color: 'red')
+        html = Nokogiri::HTML(@slider_html)
+        html.at_css('label').should be_blank
       end
     end
   end
