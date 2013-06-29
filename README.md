@@ -65,10 +65,21 @@ And Add the jquery ui css file to application.css:
     <th>label</th>
     <td>
       Customize the slider's label. Pass false to have no label.
-      :text is the labels text
+      :name is the labels name
       :append is the text that will be appended to the label, right after the value of the slider
     </td>
-    <td><tt>= f.slider_field :rate, label: { text: 'Rating:', append: 'out of 10' }, min: 1, max: 10, step: 1</tt></td></td>
+    <td><tt>= f.slider_field :rate, label: { name: 'Rating:', append: 'out of 10' }, min: 1, max: 10, step: 1</tt></td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>value_display</th>
+    <td>
+      CSS selector of the html element that displays the slider's
+      value. By default the slider's value will be displayed in the
+      slider's label, so use this option only if you need to override this
+      behavior. 
+    </td>
+    <td><tt>= f.slider_field :name, color: 'blue', value_display: '#slider-val'</tt></td></td>
     <td></td>
   </tr>
 </table>
@@ -84,5 +95,5 @@ And Add the jquery ui css file to application.css:
 
 ## Todo List
 
-1. change label's name to text
-2. SimpleForm and Formtastic Support
+1. value_display
+1. SimpleForm and Formtastic Support
