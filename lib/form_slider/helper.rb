@@ -18,6 +18,7 @@ module FormSlider
       options['data-max'] = args[:max] || 10
       options['data-step'] = args[:step] || 1
       options['data-color'] = args[:color] || 'white'
+      options['data-value-display'] = args[:value_display]
       options
     end
   end
