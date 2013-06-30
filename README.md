@@ -19,13 +19,28 @@ Add the jQuery ui slider library to application.js:
 
 And Add the jquery ui css file to application.css:
 
-   *= require jquery.ui.slider
+    *= require jquery.ui.slider
 
 ## Usage
 
 ### Form For
+Use the **slider_form_for** builder instead of form_for, then use the **slider_field** helper to generate a slider with a label:
+
+    = slider_form_for @film do |f|
+      .field
+        = f.slider_field :rating, min: 0, max: 10, step: 1
+      .field
+        = f.submit "Send"
+    
 
 ### Form Tag
+Use the **slider_field_tag** helper if you need to use a slider with form_tag:
+
+    = slider_form_tag "/buy_tickets" do
+      .field
+        = slider_form_tag :number_of_tickets, 1, min: 1, max: 6, step: 1
+      .field
+        = submit_tag "Send"
 
 
 ### Field Options
@@ -95,5 +110,4 @@ And Add the jquery ui css file to application.css:
 
 ## Todo List
 
-1. value_display
-1. SimpleForm and Formtastic Support
+- SimpleForm and Formtastic Support
