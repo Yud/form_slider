@@ -1,6 +1,6 @@
 # FormSlider
 
-Easy integration of the jQuery UI slider within rails forms.
+jQuery UI Slider + Ruby on Rails forms
 
 ## Installation
 
