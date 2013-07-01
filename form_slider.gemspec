@@ -13,10 +13,11 @@ Gem::Specification.new do |s|
   s.summary     = "TODO: Summary of FormSlider."
   s.description = "TODO: Description of FormSlider."
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.0.0"
-  s.add_dependency 'coffee-rails', '~> 4.0.0'
+  s.add_dependency "rails", "~> 3.2"
+  s.add_dependency 'coffee-rails'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'jquery-ui-rails'
   s.add_development_dependency "rspec-rails"
@@ -25,6 +26,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "cucumber-rails"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "pry"
-
   s.add_development_dependency "sqlite3"
 end

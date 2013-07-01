@@ -63,7 +63,7 @@ describe FormSlider do
       @template = ActionView::Base.new
       @template.output_buffer = ''
       @film = Film.new(director: 'Francis Ford Coppola', title: 'The Conversation', rating: 10)
-      @builder = FormSlider::SliderFormBuilder::SliderFormForBuilder.new(:film,  @film, @template, {})
+      @builder = FormSlider::SliderFormBuilder::SliderFormForBuilder.new(:film,  @film, @template, {}, nil)
       @slider_html = @builder.slider_field(:rating, min: 1, max: 10, color: 'red', value_display:'#value_display')
     end
 
@@ -78,7 +78,7 @@ describe FormSlider do
     end
 
     it "generates a text input with the given value and name" do
-      @slider_html.should match('<input id="film_rating" name="film\[rating\]" type="text" value="10" />')
+      @slider_html.should match('<input id="film_rating" name="film\[rating\]" size="30" type="text" value="10" />')
     end
 
     it "generates a slider div with the appropriate data attributes" do
