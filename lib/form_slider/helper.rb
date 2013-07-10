@@ -12,7 +12,7 @@ module FormSlider
     end
 
     def slider_options(name, args)
-      options = { class: "slider #{name.to_s}" }
+      options = { class: "form-slider #{name.to_s}" }
       options['data-append'] = args[:label] && args[:label][:append] ? args[:label][:append] : ''
       options['data-min'] = args[:min] || 1
       options['data-max'] = args[:max] || 10

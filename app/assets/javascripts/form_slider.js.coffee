@@ -9,7 +9,7 @@ $.fn.applyGradient = (position) ->
 window.sliderInput =
   load: -> 
     self = @
-    sliders = $('form .slider')
+    sliders = $('.form-slider')
     sliders.each ->
       currentSlider = $(@)
       currentSliderContainer = currentSlider.parents('.slider-container')

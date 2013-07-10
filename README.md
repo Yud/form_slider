@@ -1,8 +1,12 @@
 # FormSlider
 
-jQuery UI Slider + Ruby on Rails forms
+jQuery UI Slider + Ruby on Rails Forms
+
+###[Demo](http://form-slider-example-app.herokuapp.com/)
 
 ## Installation
+
+### Rails 4.0
 
 Add this line to your application's Gemfile:
 
@@ -17,7 +21,27 @@ Add the jQuery ui slider library to application.js:
     //= require jquery
     //= require jquery.ui.slider
 
-And Add the jquery ui css file to application.css:
+Add the jquery ui css file to application.css:
+
+    *= require jquery.ui.slider
+
+### Rails 3.2
+
+Add this line to your application's Gemfile:
+
+    gem 'form_slider', :git => 'git://github.com/Yud/form_slider.git', :branch => 'rails-3.2'
+
+And then execute:
+
+    $ bundle
+
+Add the jQuery ui slider library and form_slider.js to application.js:
+
+    //= require jquery
+    //= require jquery.ui.slider
+    //= require form_slider
+
+Add the jquery ui css file to application.css:
 
     *= require jquery.ui.slider
 
@@ -108,6 +132,6 @@ Use the **slider_field_tag** helper if you need to use a slider with form_tag:
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-## Todo List
+## Todo
 
 - SimpleForm and Formtastic Support
