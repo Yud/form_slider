@@ -29,12 +29,12 @@ describe FormSlider do
     end
 
     it "generates a slider div with the appropriate data attributes" do
-      html = Nokogiri::HTML(@slider_html)
-      html.at_css('.slider')["data-min"].should == "1"
-      html.at_css('.slider')["data-max"].should == "10"
-      html.at_css('.slider')["data-step"].should == "1"
-      html.at_css('.slider')["data-color"].should == "red"
-      html.at_css('.slider')["data-value-display"].should == "#value_display"
+      slider_html = Nokogiri::HTML(@slider_html).at_css('.form-slider')
+      slider_html["data-min"].should == "1"
+      slider_html["data-max"].should == "10"
+      slider_html["data-step"].should == "1"
+      slider_html["data-color"].should == "red"
+      slider_html["data-value-display"].should == "#value_display"
     end
 
     context "customizing the label" do
@@ -47,7 +47,7 @@ describe FormSlider do
       it "creates a data attribute containing the additional text that will be appended to the label" do
         @slider_html = @template.slider_field_tag(:rating, 5, label: { append: "additional text" }, min: 1, max: 10, color: 'red')
         html = Nokogiri::HTML(@slider_html)
-        html.at_css('.slider')["data-append"].should == "additional text"
+        html.at_css('.form-slider')["data-append"].should == "additional text"
       end
 
       it "doesn't create a label if the label option was set to false" do
@@ -82,12 +82,12 @@ describe FormSlider do
     end
 
     it "generates a slider div with the appropriate data attributes" do
-      html = Nokogiri::HTML(@slider_html)
-      html.at_css('.slider')["data-min"].should == "1"
-      html.at_css('.slider')["data-max"].should == "10"
-      html.at_css('.slider')["data-step"].should == "1"
-      html.at_css('.slider')["data-color"].should == "red"
-      html.at_css('.slider')["data-value-display"].should == "#value_display"
+      slider_html = Nokogiri::HTML(@slider_html).at_css('.form-slider')
+      slider_html["data-min"].should == "1"
+      slider_html["data-max"].should == "10"
+      slider_html["data-step"].should == "1"
+      slider_html["data-color"].should == "red"
+      slider_html["data-value-display"].should == "#value_display"
     end
 
     context "customizing the label" do
@@ -100,7 +100,7 @@ describe FormSlider do
       it "creates a data attribute containing the additional text that will be appended to the label" do
         @slider_html = @builder.slider_field(:rating, label: { append: "additional text" }, min: 1, max: 10, color: 'red')
         html = Nokogiri::HTML(@slider_html)
-        html.at_css('.slider')["data-append"].should == "additional text"
+        html.at_css('.form-slider')["data-append"].should == "additional text"
       end
 
       it "doesn't create a label if the label option was set to false" do
