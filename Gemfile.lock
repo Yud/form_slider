@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    form_slider (0.0.2alpha)
+    form_slider (0.0.2)
       coffee-rails
       jquery-rails
       jquery-ui-rails
