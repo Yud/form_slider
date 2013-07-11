@@ -16,10 +16,11 @@ And then execute:
 
     $ bundle
 
-Add the jQuery ui slider library to application.js:
+Add the jQuery ui slider library and form_slider.js to application.js:
 
     //= require jquery
     //= require jquery.ui.slider
+    //= require form_slider
 
 Add the jquery ui css file to application.css:
 
