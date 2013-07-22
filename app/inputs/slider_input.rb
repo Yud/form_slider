@@ -9,11 +9,11 @@ class SliderInput < Formtastic::Inputs::StringInput
   include ActionView::Context
 
   def to_html
-    value = object[method] || input_options[:min]
+    value = object[method] || options[:min]
     output = ""
     content_tag :div, class: 'slider-container' do
-      output << concat( slider_label(method, input_options) )
-      output << concat( content_tag :div, '', slider_options(method, input_options) )
+      output << concat( slider_label(method, options) )
+      output << concat( content_tag :div, '', slider_options(method, options) )
       output << concat( builder.text_field(method, value: value) )
     end
   end
