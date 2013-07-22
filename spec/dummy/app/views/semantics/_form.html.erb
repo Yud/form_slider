@@ -1,0 +1,23 @@
+<%= semantic_form_for(@film, url: (@film.new_record? ? semantics_path : semantic_path(@film))) do |f| %>
+  <% if @film.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
+
+      <ul>
+      <% @film.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :director %>
+    <%= f.input :rating, as: :slider, label: { name: 'Score:', append: ' out of 10'}, min: 0, max: 10, color: '#3D82DB' %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

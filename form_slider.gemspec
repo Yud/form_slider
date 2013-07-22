@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "nokogiri"
   s.add_development_dependency "cucumber-rails"
   s.add_development_dependency "database_cleaner"
+  s.add_development_dependency "formtastic"
   s.add_development_dependency "pry"
 
   s.add_development_dependency "sqlite3"
