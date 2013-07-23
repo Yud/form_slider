@@ -10,11 +10,11 @@ class SliderInput < Formtastic::Inputs::StringInput
 
   def to_html
     value = object[method] || options[:min]
-    output = ""
-    content_tag :div, class: 'slider-container' do
-      output << concat( slider_label(method, options) )
-      output << concat( content_tag :div, '', slider_options(method, options) )
-      output << concat( builder.text_field(method, value: value) )
-    end
+    label = slider_label(method, options)
+    slider = content_tag :div, '', slider_options(method, options)
+    output = builder.input(method, input_options.merge(input_html: { value: value }, wrapper_html: { class: "slider-container" }))
+    output.gsub! /(<label).*(<\/label>)/, label
+    output.insert output.index(/(<input)/), slider
+    output.html_safe
   end
 end

@@ -25,7 +25,7 @@ describe SliderInput do
   end
 
   it "generates a text input with the given value and name" do
-    @slider_html.should match('<input id="film_rating" name="film\[rating\]" type="text" value="10" />')
+    @slider_html.should match('<input id="film_rating" max="10" min="1" name="film\[rating\]" step="any" type="number" value="10" />')
   end
 
   it "generates a slider div with the appropriate data attributes" do
