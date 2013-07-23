@@ -6,6 +6,7 @@ Bundler.require(*Rails.groups)
 require "form_slider"
 require "jquery-rails"
 require "jquery-ui-rails"
+require "formtastic"
 
 module Dummy
   class Application < Rails::Application

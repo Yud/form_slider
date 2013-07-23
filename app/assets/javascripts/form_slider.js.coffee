@@ -13,7 +13,7 @@ window.sliderInput =
     sliders.each ->
       currentSlider = $(@)
       currentSliderContainer = currentSlider.parents('.slider-container')
-      inputField = currentSliderContainer.find('input[type="text"]')
+      inputField = currentSliderContainer.find('input')
       sliderValue = self.findDisplayValue(currentSlider, currentSliderContainer)
       currentSlider.slider
         min: currentSlider.data('min'),
