@@ -67,6 +67,12 @@ Use the **slider_field_tag** helper if you need to use a slider with form_tag:
       .field
         = submit_tag "Send"
 
+### Formtastic Support
+You can use form_slider with Formtastic's semantic_form_for:
+
+    = semantic_form_for @film do |f|
+      = f.inputs do
+        = f.input :rating, as: :slider, min: 0, max: 10, step: 1, color: 'red'
 
 ### Field Options
 
@@ -132,7 +138,3 @@ Use the **slider_field_tag** helper if you need to use a slider with form_tag:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-## Todo
-
-- SimpleForm and Formtastic Support
