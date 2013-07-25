@@ -15,8 +15,19 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency "rails", "~> 4.0.0"
-  s.add_dependency 'coffee-rails', '~> 4.0.0'
+  rails_version = ENV["FS_RAILS_VERSION"] || "default"
+
+  rails = case rails_version
+  when "master"
+    {github: "rails/rails"}
+  when "default"
+    ">= 3.2.0"
+  else
+    "~> #{rails_version}"
+  end
+
+  s.add_dependency 'rails', rails
+  s.add_dependency 'coffee-rails'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'jquery-ui-rails'
   s.add_development_dependency "rspec-rails"

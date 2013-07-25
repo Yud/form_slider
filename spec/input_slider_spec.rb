@@ -10,7 +10,7 @@ describe SliderInput do
     @template = ActionView::Base.new
     @template.output_buffer = ''
     @film = Film.new(director: 'Francis Ford Coppola', title: 'The Conversation', rating: 10)
-    @builder = Formtastic::FormBuilder.new(:film,  @film, @template, {})
+    @builder = Formtastic::FormBuilder.new(:film,  @film, @template, {}, nil)
     @slider_html = @builder.input(:rating, as: :slider, min: 1, max: 10, color: 'red', value_display:'#value_display')
   end
 

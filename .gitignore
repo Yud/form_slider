@@ -1,8 +1,15 @@
 .bundle/
 log/*.log
 pkg/
+.rvmrc
+Gemfile.lock
 spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
 spec/dummy/tmp/
 spec/dummy/.sass-cache
+spec/dummy-3.2/db/*.sqlite3
+spec/dummy-3.2/db/*.sqlite3-journal
+spec/dummy-3.2/log/*.log
+spec/dummy-3.2/tmp/
+spec/dummy-3.2/.sass-cache
