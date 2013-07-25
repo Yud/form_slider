@@ -2,35 +2,17 @@
 
 jQuery UI Slider + Ruby on Rails Forms
 
+[![Build Status](https://travis-ci.org/Yud/form_slider.png)](https://travis-ci.org/Yud/form_slider)
+
 ###[Demo](http://form-slider-example-app.herokuapp.com/)
 
 ## Installation
 
-### Rails 4.0
+### Rails >= 3.2
 
 Add this line to your application's Gemfile:
 
     gem 'form_slider'
-
-And then execute:
-
-    $ bundle
-
-Add the jQuery ui slider library and form_slider.js to application.js:
-
-    //= require jquery
-    //= require jquery.ui.slider
-    //= require form_slider
-
-Add the jquery ui css file to application.css:
-
-    *= require jquery.ui.slider
-
-### Rails 3.2
-
-Add this line to your application's Gemfile:
-
-    gem 'form_slider', :git => 'git://github.com/Yud/form_slider.git', :branch => 'rails-3.2'
 
 And then execute:
 

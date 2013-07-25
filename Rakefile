@@ -16,15 +16,19 @@ end
 
 rails_version = ENV["FS_RAILS_VERSION"] || "3.2"
 
+task :test do
+  system "rspec; cucumber"
+end
+
 if rails_version.to_i == 3
+  puts "using '../spec/dummy-3.2/Rakefile'"
   APP_RAKEFILE = File.expand_path("../spec/dummy-3.2/Rakefile", __FILE__)
 else
+  puts "using '../spec/dummy/Rakefile'"
   APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
 end
 
 load 'rails/tasks/engine.rake'
-
-
 
 Bundler::GemHelper.install_tasks
 
