@@ -9,7 +9,7 @@ class SliderInput < Formtastic::Inputs::StringInput
   include ActionView::Context
 
   def to_html
-    value = object[method] || options[:min]
+    value = object.send(method) || options[:min]
     label = slider_label(method, options)
     slider = content_tag :div, '', slider_options(method, options)
     output = builder.input(method, input_options.merge(input_html: { value: value }, wrapper_html: { class: "slider-container" }))
