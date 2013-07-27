@@ -14,3 +14,7 @@
 
 * Rails 3.2 branch has been merged into master
 * input_slider no longer raises error when used with non active record models 
+
+## v0.0.5
+
+* updated rubygems runtime dependencies
