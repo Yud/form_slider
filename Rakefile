@@ -20,6 +20,14 @@ task :test do
   system "rspec; cucumber"
 end
 
+task :travis do
+  ["rspec", "cucumber"].each do |cmd|
+    puts "Starting to run #{cmd}..."
+    system("export DISPLAY=:99.0 && bundle exec #{cmd}")
+    raise "#{cmd} failed!" unless $?.exitstatus == 0
+  end
+end
+
 if rails_version.to_i == 3
   puts "using '../spec/dummy-3.2/Rakefile'"
   APP_RAKEFILE = File.expand_path("../spec/dummy-3.2/Rakefile", __FILE__)

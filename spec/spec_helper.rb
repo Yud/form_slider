@@ -1,6 +1,5 @@
 ENV["RAILS_ENV"] ||= 'test'
 
-require 'pry'
 require 'rails'
 require 'nokogiri'
 require './config/rails_version'
