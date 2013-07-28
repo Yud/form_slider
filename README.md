@@ -54,8 +54,7 @@ You can use form_slider with Formtastic's semantic_form_for:
 
     = semantic_form_for @film do |f|
       = f.inputs do
-        = f.input :rating, as: :slider, min: 0, max: 10, step: 1, color:
-'red'
+        = f.input :rating, as: :slider, min: 0, max: 10, step: 1, color: 'red'
 
 ### Field Options
 
