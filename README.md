@@ -78,6 +78,12 @@ You can use form_slider with Formtastic's semantic_form_for:
     <td>10</td>
   </tr>
   <tr>
+    <th>disabled</th>
+    <td>Disable input</td>
+    <td><tt>= f.slider_field :name, disabled: true</tt></td></td>
+    <td>false</td>
+  </tr>
+  <tr>
     <th>step</th>
     <td>Determines the size or amount of each interval or step the slider takes between the min and max</td>
     <td><tt>= f.slider_field :name, max: 10, step: 1</tt></td></td>
