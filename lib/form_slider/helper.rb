@@ -16,6 +16,7 @@ module FormSlider
       options['data-append'] = args[:label] && args[:label][:append] ? args[:label][:append] : ''
       options['data-min'] = args[:min] || 1
       options['data-max'] = args[:max] || 10
+      options['data-disabled'] = args[:disabled] || false
       options['data-step'] = args[:step] || 1
       options['data-color'] = args[:color] || 'white'
       options['data-value-display'] = args[:value_display]
