@@ -24,6 +24,7 @@ class FilmsController < ApplicationController
   # GET /films/new
   # GET /films/new.json
   def new
+    @disabled = params[:disabled] || false
     @film = Film.new
 
     respond_to do |format|

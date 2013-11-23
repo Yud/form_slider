@@ -14,7 +14,7 @@
   <%= f.inputs do %>
     <%= f.input :title %>
     <%= f.input :director %>
-    <%= f.input :rating, as: :slider, label: { name: 'Score:', append: ' out of 10'}, min: 0, max: 10, color: '#3D82DB' %>
+    <%= f.input :rating, as: :slider, label: { name: 'Score:', append: ' out of 10'}, min: 0, max: 10, disabled: @disabled, color: '#3D82DB' %>
   <% end %>
 
   <div class="actions">

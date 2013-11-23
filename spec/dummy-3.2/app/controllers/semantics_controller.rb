@@ -11,6 +11,7 @@ class SemanticsController < ApplicationController
 
   # GET /films/new
   def new
+    @disabled = params[:disabled] || false
     @film = Film.new
   end
 

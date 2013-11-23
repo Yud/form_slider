@@ -16,3 +16,11 @@ Feature: Add jQuery UI sliders to Ruby on Rails forms
     Then I should see "Title: Troll 2"
     And I should see "Director: Drake Floyd"
     And I should see "Rating: 3"
+
+  @javascript
+  Scenario: Disabled sliders
+    Given I visit the "new_film" page and disabled is set to true
+    Then I should see a slider called "rating"
+    And it should be disabled
+    And I should see a slider called "tickets"
+    And it should be disabled
